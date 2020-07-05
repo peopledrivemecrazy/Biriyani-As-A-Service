@@ -1,0 +1,21 @@
+{
+  "name": "biriyani-as-a-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node biriyani.js",
+    "dev": "node biriyani.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@polka/send-type": "^0.5.2",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "polka": "^0.5.2",
+    "sirv": "^1.0.1"
+  }
+}
