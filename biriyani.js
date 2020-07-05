@@ -18,7 +18,7 @@ const ratelimit = slowDown({
     windowMs: 15 * 60 * 1000, // 15 minutes
     delayAfter: 5, // allow 5 requests to go at full-speed, then...
     delayMs: 100 // 6th request has a 100ms delay, 7th has a 200ms delay, 8th gets 300ms, etc.
-  });
+});
 polka()
     .use("trust proxy")
     .use(cors())
