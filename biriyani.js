@@ -11,7 +11,7 @@ const assets = sirv('public', {
     immutable: true
 });
 polka()
-    .use(cors)
+    .use(cors())
     .use(compress, assets)
     
     .get('/get', (req, res) => {
