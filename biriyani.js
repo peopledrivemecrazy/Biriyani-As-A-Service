@@ -15,7 +15,7 @@ polka()
     .use(compress, assets)
     
     .get('/get', (req, res) => {
-        let biriyanis = 22
+        let biriyanis = 21
         const randombiriyani = Math.floor(Math.random() * (biriyanis - 1) + 1);
         let data = {
             "image": `${baseURL}${randombiriyani}.jpg`,
