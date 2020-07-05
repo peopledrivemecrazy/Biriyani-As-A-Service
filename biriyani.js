@@ -3,7 +3,9 @@ const send = require('@polka/send-type');
 const polka = require('polka');
 const compress = require('compression')();
 const cors = require('cors');
+const expressGoogleAnalytics = require('express-google-analytics');
 
+const analytics = expressGoogleAnalytics('UA-171692890-1');
 const baseURL = "https://biriyani.anoram.com/img/"
 
 const assets = sirv('public', {
@@ -12,8 +14,8 @@ const assets = sirv('public', {
 });
 polka()
     .use(cors())
+    .use(analytics)
     .use(compress, assets)
-    
     .get('/get', (req, res) => {
         let biriyanis = 21
         const randombiriyani = Math.floor(Math.random() * (biriyanis - 1) + 1);
