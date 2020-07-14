@@ -5,6 +5,7 @@ const compress = require('compression')();
 const cors = require('cors');
 const expressGoogleAnalytics = require('express-google-analytics');
 const slowDown = require("express-slow-down");
+const { createReadStream } = require('fs');
 
 
 const analytics = expressGoogleAnalytics('UA-171692890-1');
@@ -33,6 +34,12 @@ polka()
         }
         console.log(data);
         send(res, 200, data);
+    })
+    .get('/link', (req, res) => {
+        let biriyanis = 21
+        const randombiriyani = Math.floor(Math.random() * (biriyanis - 1) + 1);
+        let file = createReadStream(`./public/img/${randombiriyani}.jpg`)
+        send(res, 206, file,{'Content-Type':'image/jpg'});
     })
     .listen(333, err => {
         if (err) throw err;
